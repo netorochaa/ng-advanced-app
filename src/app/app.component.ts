@@ -1,10 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MegaMenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <div>
+      <p-megaMenu [model]="items"></p-megaMenu>
+
+      <router-outlet></router-outlet>
+    </div>
+`,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'ng-advanced-app';
+
+  public items: MegaMenuItem[] | undefined
+
+  ngOnInit(): void {
+    this.items = [
+      {
+        label: 'Página inicial',
+        icon: 'pi pi-fw pi-home',
+        items: [],
+        routerLink: ['']
+      },
+      {
+        label: 'Empregados',
+        icon: 'pi pi-fw pi-users',
+        items: [],
+        routerLink: ['employees']
+      }
+    ]
+  }
 }
