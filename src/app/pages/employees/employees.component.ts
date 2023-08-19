@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
+import { EmployeeService } from './service/employee-service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-employees',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './employees.component.html',
+  imports: [CommonModule, HttpClientModule],
+  providers: [EmployeeService],
+  standalone: true,
 })
-export class EmployeesComponent {
+export class EmployeesComponent implements OnInit {
+  constructor(readonly employeeService: EmployeeService) {}
 
+  employees$!: Observable<any>;
+
+  ngOnInit(): void {
+    this.employees$ = this.employeeService.get();
+  }
 }
