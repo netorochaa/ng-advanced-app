@@ -4,9 +4,11 @@ import { MegaMenuItem } from 'primeng/api';
 @Component({
   selector: 'app-root',
   template: `
+    <div style="margin: 0 4rem;">
       <p-megaMenu [model]="items"></p-megaMenu>
 
       <router-outlet></router-outlet>
+    </div>
 `,
 })
 export class AppComponent implements OnInit {
@@ -19,14 +21,12 @@ export class AppComponent implements OnInit {
       {
         label: 'Página inicial',
         icon: 'pi pi-fw pi-home',
-        items: [],
-        routerLink: ['']
+        routerLink: ['home'],
       },
       {
         label: 'Empregados',
         icon: 'pi pi-fw pi-users',
-        items: [],
-        routerLink: ['employees']
+        routerLink: ['employees'],
       }
     ]
   }
