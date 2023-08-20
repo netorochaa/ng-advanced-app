@@ -1,7 +1,7 @@
 <div style="padding: 1rem;">
-  <div class="flex align-items-center justify-content-between" style="margin-bottom: 1rem;">
+  <div style="display: flex; align-content: center; justify-content: space-between; margin-bottom: 1rem;">
     <h3>Lista de empregados</h3>
-    <!-- add search -->
+    <p-button (click)="toggleModal()" icon="pi pi-plus" label="Cadastrar"></p-button>
   </div>
 
   <div class="card" *ngIf="employees$ | async as list">
@@ -29,3 +29,7 @@
     </p-table>
   </div>
 </div>
+
+<app-modal [visible]="modal">
+  <app-store-employee (saved)="addToList($event)"></app-store-employee>
+</app-modal>

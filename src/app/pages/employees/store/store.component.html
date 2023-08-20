@@ -1,1 +1,29 @@
-<p>store works!</p>
+<form [formGroup]="formEmployee">
+  <span class="p-float-label" style="margin-top: 20px;">
+    <input pInputText id="first_name" style="width: 100%;" formControlName="first_name" />
+    <label htmlFor="first_name">Nome</label>
+  </span>
+
+  <span class="p-float-label" style="margin-top: 30px;">
+    <input pInputText id="last_name" style="width: 100%;" formControlName="last_name" />
+    <label htmlFor="last_name">Sobrenome</label>
+  </span>
+
+  <span class="p-float-label" style="margin-top: 30px;">
+    <input pInputText id="email" style="width: 100%;" formControlName="email" />
+    <label htmlFor="email">E-mail</label>
+  </span>
+
+  <span class="p-float-label" style="margin-top: 30px;">
+    <input pInputText id="id" style="width: 100%;" formControlName="id" />
+    <label htmlFor="id">Salário</label>
+  </span>
+
+  <!-- <span class="p-float-label">
+    <p-dropdown formControlName="gender" placeholder="Selecione o gênero" inputId="float-label"></p-dropdown>
+    <label for="float-label">Selecione o gênero</label>
+  </span> -->
+  <div style="display: flex; justify-content: end; margin-top: 30px;">
+    <p-button (click)="save()" icon="pi pi-save" label="Salvar"></p-button>
+  </div>
+</form>
