@@ -4,11 +4,9 @@ import { MegaMenuItem } from 'primeng/api';
 @Component({
   selector: 'app-root',
   template: `
-    <div>
       <p-megaMenu [model]="items"></p-megaMenu>
 
       <router-outlet></router-outlet>
-    </div>
 `,
 })
 export class AppComponent implements OnInit {
