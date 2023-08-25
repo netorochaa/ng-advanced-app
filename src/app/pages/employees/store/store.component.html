@@ -1,5 +1,7 @@
-<form [formGroup]="formEmployee">
-  <span class="p-float-label" style="margin-top: 20px;">
+<form [formGroup]="formEmployee" (ngSubmit)="save()" >
+  <p-messages></p-messages>
+
+  <span class="p-float-label" style="margin-top: 30px;">
     <input pInputText id="first_name" style="width: 100%;" formControlName="first_name" />
     <label htmlFor="first_name">Nome</label>
   </span>
@@ -19,11 +21,7 @@
     <label htmlFor="id">Salário</label>
   </span>
 
-  <!-- <span class="p-float-label">
-    <p-dropdown formControlName="gender" placeholder="Selecione o gênero" inputId="float-label"></p-dropdown>
-    <label for="float-label">Selecione o gênero</label>
-  </span> -->
   <div style="display: flex; justify-content: end; margin-top: 30px;">
-    <p-button (click)="save()" icon="pi pi-save" label="Salvar"></p-button>
+    <p-button type="submit" icon="pi pi-save" label="Salvar"></p-button>
   </div>
 </form>

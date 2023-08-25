@@ -5,7 +5,6 @@ export interface IEmployee {
   last_name: string;
   email: string;
   avatar: string;
-  gender: string;
 }
 
 export interface IFormEmployee {
@@ -14,6 +13,5 @@ export interface IFormEmployee {
   last_name: FormControl<string | null>;
   email: FormControl<string | null>;
   avatar: FormControl<string | null>;
-  gender: FormControl<string | null>;
 }
 

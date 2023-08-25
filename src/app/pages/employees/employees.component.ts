@@ -34,5 +34,6 @@ export class EmployeesComponent implements OnInit {
 
   addToList(employee: IEmployee) {
     this.employees$ = this.employees$.pipe(map(employees => [employee, ...employees]))
+    this.toggleModal();
   }
 }
